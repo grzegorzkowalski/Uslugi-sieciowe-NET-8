@@ -3,13 +3,21 @@ using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 var summaries = new[]
 {
@@ -20,6 +28,18 @@ var windDirection = new[]
 {
     "N", "S", "W", "E", "NE", "NW", "SE", "SW"
 };
+
+var cities = new List<string>();
+
+app.MapPost("/addCity", (string city) =>
+{
+    cities.Add(city);
+});
+
+app.MapGet("/getCities", () =>
+{
+    return Results.Ok(cities);
+});
 
 app.MapGet("/temperature", () =>
 {
@@ -65,6 +85,8 @@ app.MapGet("/weatherByCity", async (string city) =>
         return Results.StatusCode(500);
     }
 });
+
+app.MapControllers();
 
 app.Run();
 

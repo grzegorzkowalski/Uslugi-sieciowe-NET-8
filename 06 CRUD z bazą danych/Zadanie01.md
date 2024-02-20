@@ -13,7 +13,7 @@
 1. Dodaj Entity Framework Core:
 Zainstaluj pakiety NuGet dla Entity Framework Core. Załóżmy, że będziemy używać SQL Server.
 
-```js
+```
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Design
