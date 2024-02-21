@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using TravelQuotesApi.Data;
+using TravelQuotesApi.Interfaces;
+using TravelQuotesApi.Models;
+using TravelQuotesApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,8 @@ builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfigura
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IRepository<Quote>, QuotesRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

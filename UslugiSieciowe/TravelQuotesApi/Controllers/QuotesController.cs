@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TravelQuotesApi.Data;
+using TravelQuotesApi.Interfaces;
 using TravelQuotesApi.Models;
 
 namespace TravelQuotesApi.Controllers
@@ -10,12 +11,12 @@ namespace TravelQuotesApi.Controllers
     [ApiController]
     public class QuotesController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IRepository<Quote> _repository;
         private readonly ILogger<QuotesController> _logger;
 
-        public QuotesController(ApplicationDbContext context, ILogger<QuotesController> logger)
+        public QuotesController(IRepository<Quote> repository, ILogger<QuotesController> logger)
         {
-            _context = context;
+            _repository = repository;
             _logger = logger;
         }
 
@@ -47,8 +48,7 @@ namespace TravelQuotesApi.Controllers
         {
             try
             {
-                _context.Quotes.Add(quote);
-                await _context.SaveChangesAsync();
+                await _repository.CreateAsync(quote);
                 _logger.LogInformation($"Dodano cytat {quote.Message}");
                 return Created();
             }
