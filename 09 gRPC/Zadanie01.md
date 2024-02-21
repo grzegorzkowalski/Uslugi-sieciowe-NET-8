@@ -13,7 +13,7 @@ dotnet new grpc -n RandomQuoteGrpc
 
 1. Przejdź do utworzonego folderu projektu:
 
-```cd cd BlogGrpcService```
+```cd RandomQuoteGrpc```
 
 1. Instalacja pakietów NuGet dla Entity Framework Core:
 ```

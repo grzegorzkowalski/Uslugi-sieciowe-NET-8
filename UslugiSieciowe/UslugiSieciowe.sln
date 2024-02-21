@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelQuotesApi", "TravelQu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCMS", "BlogCMS\BlogCMS.csproj", "{10B5C6D8-DE67-41F8-93BD-3759ABA13E01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomQuoteGrpc", "RandomQuoteGrpc\RandomQuoteGrpc.csproj", "{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{10B5C6D8-DE67-41F8-93BD-3759ABA13E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10B5C6D8-DE67-41F8-93BD-3759ABA13E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10B5C6D8-DE67-41F8-93BD-3759ABA13E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

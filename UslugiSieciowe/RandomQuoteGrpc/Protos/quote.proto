@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "RandomQuoteGrpc";
+
+package quote;
+
+service Quote {
+  rpc GetRandomQuote (QuoteRequest) returns (QuoteReply);
+}
+
+message QuoteRequest {}
+
+message QuoteReply {
+  int32 id = 1;
+  string author = 2;
+  string message = 3;
+}
