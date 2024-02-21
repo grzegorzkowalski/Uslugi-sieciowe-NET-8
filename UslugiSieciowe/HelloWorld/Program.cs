@@ -1,7 +1,11 @@
 using HelloWorld.Models;
 using Newtonsoft.Json;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
+    .ReadFrom.Configuration(hostingContext.Configuration));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -10,6 +14,15 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    //app.UseDeveloperExceptionPage();
+    app.UseExceptionHandler("/api/error");
+}
+else
+{
+    app.UseExceptionHandler("/api/error");
+}
 
 app.UseHttpsRedirection();
 

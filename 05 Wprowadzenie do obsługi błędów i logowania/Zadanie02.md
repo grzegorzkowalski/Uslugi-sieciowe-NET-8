@@ -42,7 +42,7 @@ builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfigura
 7. Dodaj do pliku `appsettings.json` connection string do bazy danych np.
 ```
   "ConnectionStrings": {
-    "DefaultConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Flashcards;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"
+    "DefaultConnection": "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HelloWorld;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"
   },
 ```
 8. Dodaj konfigurację `Serilog` i odpowiedniego `sinka` pliku konfiguracyjny.

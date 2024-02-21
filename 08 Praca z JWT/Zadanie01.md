@@ -1,4 +1,4 @@
-## Zadanie 1 z wykładowcą - konfiguracja mechanizmów uwierzytelniania i autoryzacji
+## Zadanie 1 - konfiguracja mechanizmów uwierzytelniania i autoryzacji
 
 1. W projekcie BlogCMS zainstaluj następujący pakiet:
 ```csharp

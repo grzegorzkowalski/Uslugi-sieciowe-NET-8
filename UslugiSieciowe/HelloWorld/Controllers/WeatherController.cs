@@ -9,6 +9,13 @@ namespace HelloWorld.Controllers
     [ApiController]
     public class WeatherController : ControllerBase
     {
+        private readonly ILogger<WeatherController> _logger;
+
+        public WeatherController(ILogger<WeatherController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] string city) 
         {
@@ -22,11 +29,12 @@ namespace HelloWorld.Controllers
                 response.EnsureSuccessStatusCode();
                 var content = await response.Content.ReadAsStringAsync();
                 WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(content);
-
+                _logger.LogInformation($"Pogoda dla miasta {city} została pobrana.");
                 return Ok(weatherData);
             }
             catch (HttpRequestException ex)
             {
+                _logger.LogError($"Błąd przy próbie pobrania pogody dla miasta {city}, kod: {ex.StatusCode}, opis błędu: {ex.Message}.");
                 // Obsługa błędów połączenia
                 return StatusCode(500);
             }

@@ -1,0 +1,738 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*    Etap I - Nagłówek    */
+
+
+.navigation-menu {
+  width: 100%;
+  background-color: #f3f3f3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 20px 0;
+  max-height: max-content;
+}
+.navigation-header {
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navigation-menu img,
+.menu-box {
+  margin: 0 auto;
+  display: block;
+}
+.menu-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 40px;
+}
+.menu-box li {
+  width: fit-content;
+  float: left;
+  padding: 20px;
+  list-style-type: none;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.menu-box li:hover a{
+  transition: all 250ms;
+  color: #666666;
+}
+.menu-box li:nth-child(2n):hover{
+  animation-name: scale;
+}
+.menu-box li:nth-child(2n):active{
+  transition: all 250ms;
+  box-shadow: 1px 1px 4px 1px gray inset;
+  background-color: #e2e2e2;
+}
+@keyframes scale {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(0.9);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.menu-box li a {
+  color: black;
+  text-decoration: none;
+}
+.navigation-button-container{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navigation-menu-button,
+.navigation-menu-button::before,
+.navigation-menu-button::after {
+  display: block;
+  background-color: black;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+.navigation-menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+.navigation-menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked + .navigation-button-container .navigation-menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+#menu-toggle:checked + .navigation-button-container .navigation-menu-button {
+  background: transparent;
+}
+#menu-toggle:checked + .navigation-button-container .navigation-menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 800px) {
+  .navigation-header{
+    position: relative;
+  }
+  .menu-box{
+    transition: all 250ms;
+    overflow: hidden;
+    flex-direction: column;
+    max-height: 0;
+  }
+  .menu-box li:nth-child(2n-1){
+    display: none;
+  }
+  .navigation-button-container{
+    display: flex;
+  }
+  #menu-toggle:checked ~ .menu-box{
+    max-height: 999px;
+    height: 100%;
+  }
+}
+
+
+/*    Etap II - O mnie   */
+
+
+.about-blog {
+  margin-top: 152px;
+  padding: 16px;
+  padding-bottom: 32px;
+  background-image: url(../img/mainBG.png);
+  color: #fff;
+  min-height: 100vh;
+  max-height: max-content;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+.about-blog__content{
+  display: flex;
+  flex-direction: column;
+}
+.about-blog__content-title {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  padding: 200px 0 50px 0;
+  font-size: 37px;
+  font-weight: 700;
+}
+.about-blog__content-title + img {
+  width: fit-content;
+  margin: 50px auto 100px auto;
+  display: block;
+}
+.about-blog__content--welcome {
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.about-blog__content--welcome-picture {
+  width: 50%;
+  height: max-content;
+}
+.about-blog__content--welcome-text {
+  font-size: 19px;
+  line-height: 39px;
+}
+.about-blog__content--welcome-text h2 {
+  font-size: 33px;
+  line-height: 50px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 800px) {
+  .about-blog {
+    margin-top: 112px;
+  }
+  .about-blog__content-title{
+    padding: 100px 0 50px 0;
+  }
+  .about-blog__content--welcome{
+    flex-direction: column;
+  }
+  .about-blog__content--welcome-picture {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .about-blog__content--welcome-text {
+    box-sizing: border-box;
+    height: 100%;
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .about-blog__content--welcome-text h2 {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+
+
+/*    Etap III - Pierwszy artykuł    */
+
+
+.first-article {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.first-article__box{
+  max-width: 1230px;
+  margin: 80px auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.first-article__photo {
+  width: 50%;
+  height: max-content;
+}
+.first-article__text {
+  font-size: 19px;
+  line-height: 39px;
+}
+.first-article__text-date {
+  font-size: 15px;
+  font-weight: 700;
+}
+.first-article__text-title {
+  font-size: 33px;
+  line-height: 50px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.more-about-article {
+  position: fixed;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/arrowDown.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(180deg);
+  cursor: pointer;
+  z-index: 999;
+}
+@media screen and (max-width: 800px) {
+  .first-article__box{
+    flex-direction: column;
+  }
+  .first-article__photo{
+    width: 100%;
+  }
+  .first-article__text-title {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .first-article__text-content{
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+
+/*    Etap IV - Lista artykułów   */
+
+
+.more-articles-container {
+  width: 100%;
+}
+.more-articles {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 50px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.one-of-articles {
+  width: calc(50% - 8px);
+  max-height: 338px;
+  background-color: #eaeaea;
+  display: flex;
+  gap: 10px;
+  height: max-content;
+  overflow: hidden;
+}
+.one-of-articles:hover > * {
+  transform: scale(1.1);
+}
+.one-of-articles-photo,
+.one-of-articles-title {
+  transition: all 250ms;
+}
+.one-of-articles-photo {
+  width: 50%;
+  height: max-content;
+  background-position: center;
+  background-repeat: center;
+}
+.one-of-articles-title {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one-of-articles-title p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  line-height: 30px;
+}
+.more-articles-arrows {
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.more-articles-arrows img:hover{
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .one-of-articles {
+    width: 100%;
+  }
+  .one-of-articles:hover > * {
+    transform: scale(1.05);
+  }
+}
+
+
+/*    Etap V - Artykuł promocyjny    */
+
+
+.section-container{
+  max-width: 1230px;
+  margin: 80px auto;
+  font-family: 'Poppins', sans-serif;
+}
+.promo-article {
+  max-width: 980px;
+  margin: 80px auto;
+  padding: 0 16px;
+}
+.promo-article p:first-child {
+  font-size: 40px;
+}
+.promo-article-date {
+  font-weight: 700;
+  margin: 50px auto 80px auto;
+  width: fit-content;
+}
+.promo-article-title {
+  margin-bottom: 50px;
+  font-size: 53px;
+  line-height: 73px;
+  font-weight: 700;
+}
+.promo-article-photo {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-bottom: 45%;
+  background-image: url(../img/promoArticle.png);
+  margin-bottom: 50px;
+}
+.promo-article-text {
+  font-size: 19px;
+  line-height: 39px;
+  margin-bottom: 50px;
+}
+.promo-article-inner-Title {
+  font-size: 33px;
+  line-height: 53px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+@media screen and (max-width: 800px) {
+  .promo-article-title {
+    font-size: 33px;
+    line-height: 53px;
+  }
+  .promo-article-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .promo-article-inner-Title {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+
+/*    Etap VI - O mnie   */
+
+
+.about-me-container{
+  max-width: 1230px;
+  margin: 80px auto;
+  font-family: 'Poppins', sans-serif;
+}
+.about-me {
+  padding: 16px;
+}
+.about-me img {
+  margin: 0 auto;
+  width: fit-content;
+  display: block;
+}
+.about-me-photo {
+  width: 100%;
+  height: max-content;
+  margin: 100px auto 30px auto !important;
+}
+.about-me-photo-description {
+  width: fit-content;
+  margin: 50px auto;
+  font-size: 33px;
+  line-height: 53px;
+  font-weight: 600;
+}
+.about-me-photo-description span {
+  text-transform: uppercase;
+}
+.about-me-title {
+  font-size: 89px;
+  width: fit-content;
+  margin: 0px auto 80px auto;
+}
+.about-me-content {
+  font-size: 19px;
+  line-height: 39px;
+}
+.about-me-signature {
+  font-size: 19px;
+  float: right;
+  margin-right: 10%;
+  margin-top: 4%;
+}
+@media screen and (max-width: 800px) {
+  .about-me-photo-description{
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .about-me-content{
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .about-me .about-me-photo{
+    max-width: 100%;
+  }
+}
+
+
+/*    Etap VII - Galeria   */
+
+
+.gallery-container{
+  max-width: 1230px;
+  height: max-content;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+.gallery {
+  box-sizing: border-box;
+  padding: 80px 16px;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.gallery-box{
+  position: relative;
+  width: calc((100% / 3) - 12px);
+  max-height: 440px;
+  overflow: hidden;
+}
+.gallery-main-photo {
+  height: max-content;
+  width: 100%;
+}
+.main-gallery-photo-description {
+  opacity: 0;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 46px;
+  cursor: pointer;
+  transition: all 250ms;
+  text-shadow: 0 0 8px black;
+}
+.gallery-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63,74,82, 0.6);
+  transition: all 250ms;
+  overflow: hidden;
+}
+.gallery-cover img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gallery-box:hover .main-gallery-photo-description {
+  opacity: 1;
+}
+.gallery-box:hover .gallery-cover{
+  height: 0;
+}
+@media screen and (max-width: 800px) {
+  .gallery-box{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .gallery-cover{
+    height: 99.5%;
+  }
+}
+
+
+/*    Etap VIII - stopka   */
+
+
+footer {
+  background-image: url(../img/mainBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+form {
+  max-width: 580px;
+  margin: 120px auto 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.input_box{
+  width: calc(100% / 2 - 8px);
+  position: relative;
+  height: max-content;
+}
+.input_box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  margin-right: auto;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 2%;
+  margin-bottom: 10%;
+  color: #ffffff;
+  font-size: 19px;
+}
+.textarea_box{
+  position: relative;
+  width: 100%;
+}
+.textarea_box textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #ffffff;
+  font-size: 19px;
+  min-height: 100px;
+  resize: vertical;
+}
+form textarea::placeholder,
+form input::placeholder {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+}
+.form-button {
+	background-color:#666666;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Poppins', sans-serif;
+	font-size: 19px;
+	padding:16px 31px;
+	text-decoration:none;
+  text-transform: uppercase;
+}
+.contact-and-social-media {
+  max-width: 650px;
+  margin: 80px auto;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contact-and-social-media a {
+  width: 70px;
+  height: 70px;
+  border: 1px solid white;
+  display: block;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 250ms;
+}
+.contact-and-social-media a:hover {
+  transform: scale(1.1);
+}
+.e-mail {
+  background-image: url(../img/mailIcons.png);
+}
+.facebook {
+  background-image: url(../img/face.png);
+}
+.twitter {
+  background-image: url(../img/twitter.png);
+}
+.gplus {
+  background-image: url(../img/gplus.png);
+}
+
+@media screen and (max-width: 800px) {
+  .input_box{
+    width: 100%;
+  }
+  .contact-and-social-media{
+    gap: 16px;
+  }
+}
