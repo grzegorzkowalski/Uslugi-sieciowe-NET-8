@@ -13,30 +13,36 @@ namespace TravelQuotesApi.Repositories
             _context = context;
         }
 
+        public async Task<IEnumerable<Quote>> GetAllAsync()
+        {
+            return await _context.Quotes.ToListAsync();
+        }
+
+        public async Task<Quote> GetByIdAsync(int id)
+        {
+            return await _context.Quotes.FindAsync(id);
+        }
+
         public async Task CreateAsync(Quote entity)
         {
             _context.Quotes.Add(entity);
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var quote = await GetByIdAsync(id);
+            if (quote != null)
+            {
+                _context.Quotes.Remove(quote);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public Task<IEnumerable<Quote>> GetAllAsync()
+        public async Task UpdateAsync(Quote entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Quote> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(Quote entity)
-        {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
     }
 }

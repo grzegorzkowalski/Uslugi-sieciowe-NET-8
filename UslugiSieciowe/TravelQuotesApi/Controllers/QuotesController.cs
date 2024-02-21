@@ -24,14 +24,15 @@ namespace TravelQuotesApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Quote>>> GetQuotes()
         {
-            return await _context.Quotes.ToListAsync();
+            var all = await _repository.GetAllAsync();
+            return Ok(all);
         }
 
         // GET: api/Quotes/id
         [HttpGet("{id}")]
         public async Task<ActionResult<Quote>> GetQuote(int id)
         {
-            var quote = await _context.Quotes.SingleOrDefaultAsync(x => x.Id == id);
+            var quote = await _repository.GetByIdAsync(id);
             if (quote != null)
             {
                 return Ok(quote);
@@ -64,8 +65,7 @@ namespace TravelQuotesApi.Controllers
         [HttpPut]
         public async Task<ActionResult<Quote>> UpdateQuote(Quote quote)
         {
-            _context.Quotes.Update(quote);
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(quote);
             return Created();
         }
 
@@ -73,16 +73,14 @@ namespace TravelQuotesApi.Controllers
         [HttpDelete]
         public async Task<ActionResult<Quote>> DeleteQuote(int id)
         {
-            var quote = await _context.Quotes.SingleOrDefaultAsync(x => x.Id == id);
-            if (quote != null)
+            try
             {
-                _context.Quotes.Remove(quote);
-                await _context.SaveChangesAsync();
+                await _repository.DeleteAsync(id);
                 return NoContent();
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest(ex.Message);
             }
         }
     }
