@@ -35,7 +35,7 @@ public class PostsController : ControllerBase
 
     // POST: api/posts
     [HttpPost]
-    public async Task<IActionResult> CreatePost([FromBody] Post post)
+    public async Task<IActionResult> CreatePost(Post post)
     {
         if (!ModelState.IsValid)
         {
