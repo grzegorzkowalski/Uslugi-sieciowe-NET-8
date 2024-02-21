@@ -13,8 +13,10 @@ Stworzenie prostego systemu zarządzania treścią (CMS) dla bloga, umożliwiaj�
 
 #### 2. Instalacja Pakietów NuGet
 ```
+dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
 ```
 ### Krok 2: Konfiguracja Bazy Danych
 
@@ -32,6 +34,7 @@ namespace BlogCMS.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+        public string ImageUrl {get; set; }
         public DateTime Published { get; set; }
     }
 }
