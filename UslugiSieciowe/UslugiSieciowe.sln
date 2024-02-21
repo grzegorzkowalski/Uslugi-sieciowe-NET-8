@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{089C9CF8-0FF2-46CC-84F9-BF2E0FCDA629}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{089C9CF8-0FF2-46CC-84F9-BF2E0FCDA629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelQuotesApi", "TravelQuotesApi\TravelQuotesApi.csproj", "{74EAA109-48DA-4C8B-829B-5142505812DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{089C9CF8-0FF2-46CC-84F9-BF2E0FCDA629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{089C9CF8-0FF2-46CC-84F9-BF2E0FCDA629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{089C9CF8-0FF2-46CC-84F9-BF2E0FCDA629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EAA109-48DA-4C8B-829B-5142505812DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EAA109-48DA-4C8B-829B-5142505812DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EAA109-48DA-4C8B-829B-5142505812DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EAA109-48DA-4C8B-829B-5142505812DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
