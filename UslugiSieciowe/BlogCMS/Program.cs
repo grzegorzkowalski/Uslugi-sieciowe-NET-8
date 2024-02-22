@@ -1,3 +1,4 @@
+using BlogCMS;
 using BlogCMS.Data;
 using BlogCMS.Interfaces;
 using BlogCMS.Models;
@@ -19,6 +20,7 @@ builder.Services.AddDbContext<BlogDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IRepository<Post>, EfCoreRepository<Post>>();
+builder.Services.AddScoped<gRPCRepository>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -34,6 +36,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 builder.Services.AddAuthorization();
+
+builder.Services.AddGrpcClient<BlogPosts.BlogPostsClient>(o =>
+{
+    o.Address = new Uri("https://localhost:7018"); // Adres us³ugi gRPC
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

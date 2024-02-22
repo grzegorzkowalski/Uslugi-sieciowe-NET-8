@@ -243,6 +243,7 @@ W aplikacji Web API dodaj pakiet klienta gRPC:
 dotnet add package Grpc.Net.Client
 dotnet add package Google.Protobuf
 dotnet add package Grpc.Tools
+dotnet add package Grpc.Net.ClientFactory
 ```
 
 1. Skopiuj plik .proto:

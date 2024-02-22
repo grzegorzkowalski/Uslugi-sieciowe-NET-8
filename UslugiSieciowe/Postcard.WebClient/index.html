@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.js" integrity="sha512-pn4yorWMbHHvdsldBpkTNjJaoadsoYs/ZgOYHSHUtivn1j/Ddgdnlgt1egjQcP8j4atM3TR+tgIqgjhi5Z11KQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Adventure blog</title>
+</head>
+<body>
+
+    <!-- Etap I - Logo & nawigacja -->
+
+    <nav class="navigation-menu">
+        <header class="navigation-header">
+            <img src="./img/logo.png" alt="logo">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='navigation-button-container' for="menu-toggle">
+                <div class='navigation-menu-button'></div>
+            </label>
+            <ul class="menu-box">
+                <li class="dot"><img src="./img/dot.png" alt="dot"></li>
+                <li><a href="#firstArticle">aktualności</a></li>
+                <li class="dot"><img src="./img/dot.png" alt="dot"></li>
+                <li><a href="#aboutMe">o mnie</a></li>
+                <li class="dot"><img src="./img/dot.png" alt="dot"></li>
+                <li><a href="#gallery">galeria</a></li>
+                <li class="dot"><img src="./img/dot.png" alt="dot"></li>
+                <li><a href="#contact">kontakt</a></li>
+                <li class="dot"><img src="./img/dot.png" alt="dot"></li>
+            </ul>
+        </header>
+    </nav>
+
+    <!-- Etap II - Nagłówek & O mnie -->
+
+    <section>
+        <div class="about-blog">
+            <div class="about-blog__content">
+                <header>
+                    <h1 class="about-blog__content-title">Life is a journey, stories are our mile markers</h1>
+                    <img src="./img/logoWhite.png" alt="white logo">
+                </header>
+                <div class="about-blog__content--welcome">
+                    <img src="./img/pexels-man-1.jpg" alt="Grzegorz Kowalski" class="about-blog__content--welcome-picture">
+                    <div class="about-blog__content--welcome-text">
+                        <h2>
+                            Hi. I’m Grzegorz Kowalski.
+                            <br>Welcome to LAOS!
+                        </h2>
+                        <p>
+                            Besides being one of my all-time favorite people in the world,
+                            Jodi is also a damn amazing blogger who writes often about food
+                            and culture. She devotes a lot of time to food on the road, taking
+                            mouthwatering photos that make me jealous of her ability to do so.
+                            A former lawyer, she also writes a series called “Thrillable Hours”
+                            about other lawyers who gave up being a corporate lackey for life on the road.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--    Etap III - Pierwszy artykuł    -->
+
+    <article id="firstArticle" class="first-article">
+        <div class="first-article__box">
+            <img src="./img/mainArticlePhoto.png" alt="bay" class="first-article__photo ">
+            <div class="first-article__text">
+                <p class="first-article__text-date">01.02.2019</p>
+                <h3 class="first-article__text-title">Welcome to LAOS!</h3>
+                <p class="first-article__text-content">
+                    Besides being one of my all-time favorite people in the
+                    world, Jodi is also a damn amazing blogger who writes often about food and culture. She
+                    devotes a lot of time to food on the road, taking mouthwatering photos that make me jealous
+                    of her ability to do so. A former lawyer, she also writes a series called “Thrillable Hours”
+                    about other lawyers who gave up being a corporate lackey for life on the road. Besides being
+                    one of my all-tiut other lawyers who gave up being a corporate lackey for life on the road...
+                </p>
+            </div>
+        </div>
+        <a href="#">
+            <button class="more-about-article"></button>
+        </a>
+    </article>
+
+    <!-- Etap IV - Więcej artykułów -->
+
+    <section class="more-articles-container">
+        <div class="more-articles">
+            <div class="one-of-articles">
+                <img src="./img/pexels-1.jpg" alt="bay with logo" class="one-of-articles-photo">
+                <div class="one-of-articles-title">
+                    <p>
+                        Hi. I’m Grzegorz Kowalski.
+                        <br>Welcome to LAOS!
+                    </p>
+                </div>
+            </div>
+            <div class="one-of-articles">
+                <img src="./img/pexels-6.jpg" alt="bay with logo" class="one-of-articles-photo">
+                <div class="one-of-articles-title">
+                    <p>
+                        Hi. I’m Grzegorz Kowalski.
+                        <br>Welcome to LAOS!
+                    </p>
+                </div>
+            </div>
+            <div class="one-of-articles">
+                <img src="./img/pexels-2.jpg" alt="bay with logo" class="one-of-articles-photo">
+                <div class="one-of-articles-title">
+                    <p>
+                        Hi. I’m Grzegorz Kowalski.
+                        <br>Welcome to LAOS!
+                    </p>
+                </div>
+            </div>
+            <div class="one-of-articles">
+                <img src="./img/pexels-3.jpg" alt="bay with logo" class="one-of-articles-photo">
+                <div class="one-of-articles-title">
+                    <p>
+                        Hi. I’m Grzegorz Kowalski.
+                        <br>Welcome to LAOS!
+                    </p>
+                </div>
+            </div>
+            <div class="one-of-articles">
+                <img src="./img/pexels-4.jpg" alt="bay with logo" class="one-of-articles-photo">
+                <div class="one-of-articles-title">
+                    <p>
+                        Hi. I’m Grzegorz Kowalski.
+                        <br>Welcome to LAOS!
+                    </p>
+                </div>
+            </div>
+            <div class="one-of-articles">
+                <img src="./img/pexels-5.jpg" alt="bay with logo" class="one-of-articles-photo">
+                <div class="one-of-articles-title">
+                    <p>
+                        Hi. I’m Grzegorz Kowalski.
+                        <br>Welcome to LAOS!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="more-articles-arrows">
+            <img src="./img/arrowLeft.png" alt="arrow left">
+            <img src="./img/arrowRight.png" alt="arrow right">
+        </div>
+    </section>
+
+    <!-- Etap V - Promowany artykuł -->
+
+    <section class="section-container">
+        <div class="promo-article">
+            <p>***</p>
+            <p class="promo-article-date">01.02.2019</p>
+            <h2 class="promo-article-title">
+                Wai o Tapu – gejzery – geotermalny cud Nowej Zelandii
+            </h2>
+            <div class="promo-article-photo"></div>
+            <p class="promo-article-text">
+                Podróż na Seszele zawsze była moim marzeniem. Gdy przyszło do organizacji
+                wyprawy nie mogłam uwierzyć, że to się dzieje naprawdę! Wyprawę
+                rozpoczęliśmy od wyspy Praslin. Pokażę Wam dzisiaj jak my zorganizowaliśmy
+                swoją objazdówkę, jakie miejsca najbardziej nas urzekły oraz gdzie wybrać
+                się na pyszny obiad! Lecimy!
+            </p>
+            <h3 class="promo-article-inner-Title"> JAK DOSTAĆ SIĘ NA WYSPĘ PRASLIN?</h3>
+            <p class="promo-article-text">
+                Pierwsze pytanie, jakie pojawi się przy planowaniu podróży to jak dostać się po
+                przylocie na wyspę Praslin. Jest na to kilka sposobów: możecie popłynąć promem
+                CAT COCOS , polecieć samolotem. liniami AIR SEYCHELLES, a nawet helikopterem
+                FLY ZIL AIR. Koszt przelotu samolotem lokalnych linii lotniczych w tym roku
+                to około 250 pln w jedną stronę (w cenie biletu jest 30-kg bagaż), a cena rejsu
+                statkiem to około 220 pln (dzieci w wieku od 2 do 12 lat płacą 50% ceny). Promy
+                wypływają trzy razy dziennie, rejs trwa około godzinę. Samoloty kursują częściej,
+                sześć razy dziennie, a lot trwa 20 minut.
+            </p>
+        </div>
+    </section>
+
+    <!-- Etap VI - O mnie więcej -->
+
+    <section id="aboutMe" class="about-me-container">
+        <div class="about-me">
+            <img src="./img/logo.png" alt="logo">
+            <img src="./img/pexels-man-2.jpg" alt="logo" class="about-me-photo">
+            <h3 class="about-me-photo-description">Grzegorz <span>kowalski</span></h3>
+            <h2 class="about-me-title">hi!</h2>
+            <p class="about-me-content">
+                Besides being one of my all-time favorite people in the world, Jodi is
+                also a damn amazing blogger who writes often about food and culture.
+                She devotes a lot of time to food on the road, taking mouthwatering photos
+                that make me jealous of her ability to do so. A former lawyer, she also
+                writes a series called “Thrillable Hours” about other lawyers who gave up
+                being a corporate lackey for life on the road. Besides being one of my all-tiut
+                other lawyers who gave up being a corporate lackey for life on the road...
+            </p>
+            <p class="about-me-content">
+                so. A former lawyer, she also writes a series called “Thrillable Hours” a
+                bout other lawyers who gave up being a corporate lackey for life on the road.
+                Besides being one of my all-tiut other lawyers who gave up being a corporate
+                lackey for life on the road...so. A former lawyer, she also writes a series called
+                “Thrillable Hours” about other lawyers who gave up being a corporate lackey for life
+                on the road. Besides being one of my all-tiut other lawyers who gave up being
+                a corporate lackey for life on the road...
+            </p>
+            <p class="about-me-signature">Grzegorz</p>
+        </div>
+    </section>
+
+    <!-- Etap VII - Galeria -->
+
+    <section id="gallery" class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-box">
+                <img src="./img/gallery-1.jpg" alt="bay" class="gallery-main-photo">
+                <p class="main-gallery-photo-description">laos!</p>
+                <div class="gallery-cover">
+                    <img src="./img/galleryIcons.png" alt="gallery icon">
+                </div>
+            </div>
+            <div class="gallery-box">
+                <img src="./img/gallery-2.jpg" alt="bay" class="gallery-main-photo">
+                <p class="main-gallery-photo-description">laos!</p>
+                <div class="gallery-cover">
+                    <img src="./img/galleryIcons.png" alt="gallery icon">
+                </div>
+            </div>
+            <div class="gallery-box">
+                <img src="./img/gallery-3.jpg" alt="bay" class="gallery-main-photo">
+                <p class="main-gallery-photo-description">laos!</p>
+                <div class="gallery-cover">
+                    <img src="./img/galleryIcons.png" alt="gallery icon">
+                </div>
+            </div>
+            <div class="gallery-box">
+                <img src="./img/gallery-4.jpg" alt="bay" class="gallery-main-photo">
+                <p class="main-gallery-photo-description">laos!</p>
+                <div class="gallery-cover">
+                    <img src="./img/galleryIcons.png" alt="gallery icon">
+                </div>
+            </div>
+            <div class="gallery-box">
+                <img src="./img/gallery-5.jpg" alt="bay" class="gallery-main-photo">
+                <p class="main-gallery-photo-description">laos!</p>
+                <div class="gallery-cover">
+                    <img src="./img/galleryIcons.png" alt="gallery icon">
+                </div>
+            </div>
+            <div class="gallery-box">
+                <img src="./img/gallery-6.jpg" alt="bay" class="gallery-main-photo">
+                <p class="main-gallery-photo-description">laos!</p>
+                <div class="gallery-cover">
+                    <img src="./img/galleryIcons.png" alt="gallery icon">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Etap VIII - Stopka -->
+
+    <footer id="contact">
+        <form>
+            <div class="input_box">
+                <input name="name" type="text" placeholder="Imię i nazwisko" class="form-name" id="user" />
+            </div>
+            <div class="input_box">
+                <input name="email" type="text" placeholder="E-mail" class="form-email" id="mail" />
+            </div>
+            <div class="textarea_box">
+                <textarea name="message" type="text" placeholder="Wiadomość" id="prompt"></textarea>
+            </div>
+            <div class="form-button" id="send">wyślij</div>
+        </form>
+        <ul id="messagesList"></ul>
+        <div class="contact-and-social-media">
+            <a href="mailto:grzegorz@theadventurerblog.pl" class="e-mail"></a>
+            <a href="#" class="facebook"></a>
+            <a href="#" class="twitter"></a>
+            <a href="#" class="gplus"></a>
+        </div>
+    </footer>
+    <script src="js/chat.jsx"></script>
+</body>
+</html>
