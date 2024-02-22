@@ -5,11 +5,13 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{089C9CF8-0FF2-46CC-84F9-BF2E0FCDA629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelQuotesApi", "TravelQuotesApi\TravelQuotesApi.csproj", "{74EAA109-48DA-4C8B-829B-5142505812DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelQuotesApi", "TravelQuotesApi\TravelQuotesApi.csproj", "{74EAA109-48DA-4C8B-829B-5142505812DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCMS", "BlogCMS\BlogCMS.csproj", "{10B5C6D8-DE67-41F8-93BD-3759ABA13E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCMS", "BlogCMS\BlogCMS.csproj", "{10B5C6D8-DE67-41F8-93BD-3759ABA13E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomQuoteGrpc", "RandomQuoteGrpc\RandomQuoteGrpc.csproj", "{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomQuoteGrpc", "RandomQuoteGrpc\RandomQuoteGrpc.csproj", "{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogGrpcService", "BlogGrpcService\BlogGrpcService.csproj", "{AAB05DFA-92F0-4094-8CC5-AF943E79A43C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80AE8E3D-2747-40A9-8BC5-98C57B79CCEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB05DFA-92F0-4094-8CC5-AF943E79A43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB05DFA-92F0-4094-8CC5-AF943E79A43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB05DFA-92F0-4094-8CC5-AF943E79A43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB05DFA-92F0-4094-8CC5-AF943E79A43C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

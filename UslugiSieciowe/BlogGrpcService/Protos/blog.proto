@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "BlogGrpcService";
+
+package blog;
+
+// Us³uga gRPC dla postów bloga
+service BlogPosts {
+  rpc CreatePost (CreatePostRequest) returns (PostReply);
+  rpc GetPost (GetPostRequest) returns (PostReply);
+  rpc UpdatePost (UpdatePostRequest) returns (PostReply);
+  rpc DeletePost (DeletePostRequest) returns (DeletePostReply);
+}
+
+message CreatePostRequest {
+  string title = 1;
+  string content = 2;
+  string imageUrl = 3;
+}
+
+message GetPostRequest {
+  int32 id = 1;
+}
+
+message UpdatePostRequest {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+  string imageUrl = 4;
+}
+
+message DeletePostRequest {
+  int32 id = 1;
+}
+
+message PostReply {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+  string imageUrl = 4;
+  string published = 5;
+}
+
+message DeletePostReply {
+  bool success = 1;
+}
