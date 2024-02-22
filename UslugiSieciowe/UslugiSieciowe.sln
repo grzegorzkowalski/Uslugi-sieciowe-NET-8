@@ -15,11 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogGrpcService", "BlogGrpc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalrImplementation", "..\..\SignalrImplementation\SignalrImplementation.csproj", "{44309714-15B6-42CF-AEC1-080B147D235E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherWorkerService", "WeatherWorkerService\WeatherWorkerService.csproj", "{EC438322-10BF-4948-BC20-5A72CB1E40FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherWorkerService", "WeatherWorkerService\WeatherWorkerService.csproj", "{EC438322-10BF-4948-BC20-5A72CB1E40FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postcard.WebAPI.SignalR", "PostCard.WebAPI.SignalR\Postcard.WebAPI.SignalR.csproj", "{B90BB822-8A49-4B6E-9ED3-7A07D7ECBD61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postcard.WebAPI_SignalR", "PostCard.WebAPI.SignalR\Postcard.WebAPI_SignalR.csproj", "{B90BB822-8A49-4B6E-9ED3-7A07D7ECBD61}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Postcard.WebClient", "Postcard.WebClient\Postcard.WebClient.esproj", "{5A86B61F-FE57-4564-B59C-4A7F87785A72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postcard.gRPC", "Postcard.gRPC\Postcard.gRPC.csproj", "{B4284CC9-9D49-4277-BBFA-7EC638B6FDE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{5A86B61F-FE57-4564-B59C-4A7F87785A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A86B61F-FE57-4564-B59C-4A7F87785A72}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5A86B61F-FE57-4564-B59C-4A7F87785A72}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B4284CC9-9D49-4277-BBFA-7EC638B6FDE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4284CC9-9D49-4277-BBFA-7EC638B6FDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4284CC9-9D49-4277-BBFA-7EC638B6FDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4284CC9-9D49-4277-BBFA-7EC638B6FDE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

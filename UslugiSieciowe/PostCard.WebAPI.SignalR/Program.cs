@@ -1,8 +1,14 @@
-using SignalrImplementation.SignalR;
+using Postcard.WebAPI_SignalR.Repository;
+using Postcard.WebAPI_SignalR.SignalR;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
+    .ReadFrom.Configuration(hostingContext.Configuration));
+
+builder.Services.AddScoped<gRPCRepository>();
 
 builder.Services.AddCors(options =>
 {
@@ -11,6 +17,11 @@ builder.Services.AddCors(options =>
                .AllowAnyMethod()
                .AllowAnyHeader()
                .AllowCredentials()); // Necessary for SignalR
+});
+
+builder.Services.AddGrpcClient<Postcard.WebAPI_SignalR.Postcard.PostcardClient>(o =>
+{
+    o.Address = new Uri("https://localhost:7111"); // Adres us³ugi gRPC
 });
 
 builder.Services.AddSignalR();

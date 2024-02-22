@@ -34,7 +34,7 @@ namespace WeatherWorkerService
                         var content = await response.Content.ReadAsStringAsync();
                         var weatherData = JsonConvert.DeserializeObject<WeatherData>(content);
 
-                        var weather = new Weather()
+                        var weather = new WeatherModel()
                         {
                             City = city,
                             WeatherDate = DateTime.Now,

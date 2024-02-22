@@ -43,7 +43,7 @@ public class PostsController : ControllerBase
     public async Task<IActionResult> CreatePost(Post post)
     {
 
-        await _gRPCRepository.AddAsync(post);
+        //await _gRPCRepository.AddAsync(post);
         return Created();
     }
 

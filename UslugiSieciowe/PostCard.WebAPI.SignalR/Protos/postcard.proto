@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "Postcard.WebAPI_SignalR";
+
+package postcard;
+
+// The greeting service definition.
+service Postcard {
+  // Sends a greeting
+  rpc SendMail (MailRequest) returns (MailReply);
+}
+
+// The request message containing the user's name.
+message MailRequest {
+  string user = 1;
+  string email = 2;
+  string prompt = 3;
+}
+
+// The response message containing the greetings.
+message MailReply {
+  bool success = 1;
+}

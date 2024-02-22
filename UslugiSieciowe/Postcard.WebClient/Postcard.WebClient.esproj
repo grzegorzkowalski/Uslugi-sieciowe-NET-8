@@ -1,1 +1,7 @@
-<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.271090-alpha" />
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.271090-alpha">
+  <ItemGroup>
+    <None Update="Protos\postcard.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+  </ItemGroup>
+</Project>

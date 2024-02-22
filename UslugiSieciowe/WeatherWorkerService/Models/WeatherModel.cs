@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherWorkerService.Models
 {
-    public class Weather
+    public class WeatherModel
     {
         public int Id { get; set; }
         public string City { get; set; }
