@@ -1,11 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using TravelQuotesApi.Data;
+using TravelQuotesApi.Interfaces;
+using TravelQuotesApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IRepository<Quote>, QuoteRepository>();  
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
