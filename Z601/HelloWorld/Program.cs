@@ -1,3 +1,4 @@
+using HelloWorld.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Newtonsoft.Json;
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient<HelloWorld.Models.ILogger, FileLogger>();
+builder.Services.AddTransient<User>();
 
 var app = builder.Build();
 
