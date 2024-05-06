@@ -1,14 +1,15 @@
-﻿using BlogCMS.IRepositories;
+﻿using BlogCMS.Context;
+using BlogCMS.IRepositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogCMS.Repositories
 {
     public class EfCoreRepository<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _context;
+        private readonly BlogDbContext _context;
         private DbSet<T> _entities;
 
-        public EfCoreRepository(DbContext context)
+        public EfCoreRepository(BlogDbContext context)
         {
             _context = context;
             _entities = context.Set<T>();
