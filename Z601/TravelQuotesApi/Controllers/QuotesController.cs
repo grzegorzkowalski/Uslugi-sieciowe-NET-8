@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TravelQuotesApi.Data;
+using TravelQuotesApi.Interfaces;
 using TravelQuotesApi.Models;
 
 namespace TravelQuotesApi.Controllers
@@ -9,30 +10,44 @@ namespace TravelQuotesApi.Controllers
     [ApiController]
     public class QuotesController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private IRepository<Quote> _repository;
 
-        public QuotesController(ApplicationDbContext context)
+        public QuotesController(IRepository<Quote> repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         // GET: api/Quotes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Quote>>> GetQuotes()
-        {
-            return await _context.Quotes.ToListAsync();
+        {   var quotes = await _repository.GetAllAsync();
+            return Ok(quotes);
         }
 
         // POST: api/Quotes
         [HttpPost]
         public async Task<ActionResult<Quote>> PostQuote(Quote quote)
         {
-            _context.Quotes.Add(quote);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetQuote", new { id = quote.Id }, quote);
+            await _repository.CreateAsync(quote);
+            return CreatedAtAction("GetByIdAsync", new { id = quote.Id }, quote);
         }
 
-        // Dodaj więcej metod API według potrzeb...
+        [HttpGet("{id}")]
+        public async Task<Quote> GetByIdAsync(int id)
+        {
+            return await _repository.GetByIdAsync(id);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task DeleteAsync(int id)
+        {
+            await _repository.DeleteAsync(id);
+        }
+
+        [HttpPut("{id}")]
+        public async Task UpdateAsync(Quote entity)
+        {
+            await _repository.UpdateAsync(entity);
+        }
     }
 }
