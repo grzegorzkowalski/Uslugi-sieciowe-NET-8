@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TravelQuotesApi.Data;
+using WeatherWorkerService.Data;
 
 #nullable disable
 
-namespace TravelQuotesApi.Migrations
+namespace WeatherWorkerService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240415152447_Init")]
+    [Migration("20240520171657_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -19,12 +19,12 @@ namespace TravelQuotesApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("TravelQuotesApi.Models.Quote", b =>
+            modelBuilder.Entity("WeatherWorkerService.Models.OpenWeather", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,17 +32,27 @@ namespace TravelQuotesApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Author")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("FeelsLike")
+                        .HasColumnType("float");
 
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Humidity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Pressure")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Temp")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TempMax")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TempMin")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Quotes");
+                    b.ToTable("Weathers");
                 });
 #pragma warning restore 612, 618
         }

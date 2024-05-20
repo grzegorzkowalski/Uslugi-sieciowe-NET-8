@@ -1,15 +1,21 @@
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using WeatherWorkerService.Data;
+using WeatherWorkerService.Mappers;
 using WeatherWorkerService.Models;
+using WeatherWorkerService.Repository;
 
 namespace WeatherWorkerService
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly WeatherRepository _repository;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, WeatherRepository repository)
         {
-            _logger = logger;
+            _repository = repository;
+            
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -30,10 +36,8 @@ namespace WeatherWorkerService
                         response.EnsureSuccessStatusCode();
                         var content = await response.Content.ReadAsStringAsync();
                         var weatherData = JsonConvert.DeserializeObject<WeatherData>(content);
-
-                        // Tutaj zapisz weatherData do bazy danych, pamiêtaj o mapowaniu
-                        // Przyk³ad: _dbContext.WeatherData.Add(weatherData);
-                        // await _dbContext.SaveChangesAsync(stoppingToken);           
+                        var openWeather = WeatherMapper.MapWeather(weatherData);
+                        _repository.AddAsync(openWeather);         
                     }
                     catch (HttpRequestException ex)
                     {

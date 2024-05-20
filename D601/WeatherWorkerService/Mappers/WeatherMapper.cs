@@ -9,7 +9,7 @@ namespace WeatherWorkerService.Mappers
 {
     internal class WeatherMapper
     {
-        public static OpenWeather MapWeather(WeatherData weatherData, OpenWeather openWeather)
+        public static OpenWeather MapWeather(WeatherData weatherData)
         {
             return new OpenWeather
             {
