@@ -1,0 +1,6 @@
+@Z601_2025_HostAddress = http://localhost:5214
+
+GET {{Z601_2025_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
