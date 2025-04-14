@@ -1,7 +1,9 @@
 ﻿using BlogCMS.Data;
 using BlogCMS.Models;
+using BlogCMS.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogCMS.Controllers
 {
@@ -9,27 +11,46 @@ namespace BlogCMS.Controllers
     [ApiController]
     public class QuotesController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly QuoteRepository _repository;
 
-        public QuotesController(ApplicationDbContext context)
+        public QuotesController(QuoteRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         // POST: api/Quotes
         [HttpPost]
         public async Task<ActionResult<Quote>> PostQuote(Quote quote)
         {
-            _context.Quotes.Add(quote);
-            await _context.SaveChangesAsync();
+            var newQuote = await _repository.CreateAsync(quote);
 
-            return CreatedAtAction("GetQuote", new { id = quote.Id }, quote);
+            return CreatedAtAction("GetQuote", new { id = quote.Id }, newQuote);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<Quote> GetQuote(int id)
+        {
+            return await _repository.GetByIdAsync(id);
         }
 
         [HttpGet]
-        public Quote GetQuote(int id)
+        public async Task<IEnumerable<Quote>> GetAllAsync()
         {
-            return _context.Quotes.FirstOrDefault(x => x.Id == id);
+            return await _repository.GetAllAsync();
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult<Quote>> PatchQuote(Quote quote)
+        {
+            await _repository.UpdateAsync(quote);
+            return CreatedAtAction("GetQuote", new { id = quote.Id }, quote);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Quote>> DeleteQuote(int id)
+        {
+            await _repository.DeleteAsync(id);
+            return NoContent();
         }
     }
 }
