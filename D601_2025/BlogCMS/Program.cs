@@ -1,4 +1,6 @@
 using BlogCMS.Data;
+using BlogCMS.Interfaces;
+using BlogCMS.Models;
 using BlogCMS.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -10,6 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<QuoteRepository>();
+
+builder.Services.AddTransient<IRepository<Post>, EfCoreRepository<Post>>();
 
 
 builder.Services.AddControllers();

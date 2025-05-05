@@ -11,5 +11,6 @@ namespace BlogCMS.Data
         }
 
         public DbSet<Quote> Quotes { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 }
