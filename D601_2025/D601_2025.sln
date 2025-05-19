@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCMS", "BlogCMS\BlogCMS.csproj", "{AB546430-D7C2-43A2-B4A1-EA9AB07EDB6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelQuotesApi", "TravelQuotesApi\TravelQuotesApi.csproj", "{18874FA1-90C5-4BCC-85FE-744C81509995}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherWorkerService", "WeatherWorkerService\WeatherWorkerService.csproj", "{28FE8797-0AA8-4580-83DC-858194B57364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{AB546430-D7C2-43A2-B4A1-EA9AB07EDB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB546430-D7C2-43A2-B4A1-EA9AB07EDB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB546430-D7C2-43A2-B4A1-EA9AB07EDB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18874FA1-90C5-4BCC-85FE-744C81509995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18874FA1-90C5-4BCC-85FE-744C81509995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18874FA1-90C5-4BCC-85FE-744C81509995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18874FA1-90C5-4BCC-85FE-744C81509995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FE8797-0AA8-4580-83DC-858194B57364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FE8797-0AA8-4580-83DC-858194B57364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FE8797-0AA8-4580-83DC-858194B57364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FE8797-0AA8-4580-83DC-858194B57364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
